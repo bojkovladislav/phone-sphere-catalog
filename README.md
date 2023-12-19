@@ -1,4 +1,4 @@
-# React Phone Catalog Documentation
+# React Phone Catalog
 
 ## Introduction
 
