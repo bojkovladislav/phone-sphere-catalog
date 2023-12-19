@@ -10,21 +10,21 @@
 
   @include onMobile {
     margin: 0 auto;
-    width: 273px;
+    width: 100%;
   }
 
   @include onTablet {
-    width: 800px;
+    width: 100%;
   }
 
   @include onLaptop {
-    width: 1000px;
+    width: 100%;
   }
 
   @include onDesktop {
-    width: 1125px;
+    width: 100%;
   }
-  
+
   &__container {
     display: flex;
     justify-content: space-between;

@@ -33,6 +33,12 @@ Users have the flexibility to customize the number of products displayed on the 
 
 ![Customizable Display GIF](./public/new/img/showcase/product.gif)
 
+### Search
+
+Users have an ability to find product by searching it, making it much easier to get a desired gadget.
+
+![Searching](./public/new/img/showcase/search.gif)
+
 ### Sorting and Filtering 🔄
 
 Efficiently sort and filter products based on user preferences. Users can easily organize products, making it convenient to find the perfect mobile phone.
@@ -70,6 +76,18 @@ Implementation of custom hooks to encapsulate and reuse logic, promoting code ma
 ### TypeScript 📝
 
 Developed using TypeScript for static typing, enhancing code quality and developer productivity.
+
+### Sass 🎨
+
+Sass is used as the CSS preprocessor for creating modular and maintainable styles.
+
+### Classnames 🖋️
+
+The Classnames library is employed to conditionally apply CSS class names based on certain conditions. This simplifies the process of dynamically managing class names in React components, making the code more readable and expressive.
+
+### Bulma 📐
+
+Bulma is utilized as the CSS framework to provide a responsive and consistent grid system, as well as a set of modern UI components. This choice enhances the overall aesthetic appeal and responsiveness of the React Phone Catalog, contributing to a polished and professional user interface.
 
 ### Axios 🌐
 
