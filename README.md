@@ -25,31 +25,31 @@ The catalog boasts an intuitive and user-friendly design, ensuring a smooth and 
 
 The application comes with both Dark and Light themes to accommodate diverse user preferences. A theme icon in the header allows users to effortlessly switch between themes, and the chosen theme is persistently saved in local storage.
 
-![Dark and Light Themes GIF](new/img/showcase/theme-switcher.gif)
+![Dark and Light Themes GIF](./public/new/img/showcase/theme-switcher.gif)
 
 ### Product overview 🖥️
 
 Users have the flexibility to customize the number of products displayed on the page, tailoring the viewing experience to their preferences.
 
-![Customizable Display GIF](new/img//showcase/product.gif)
+![Customizable Display GIF](./public/new/img//showcase/product.gif)
 
 ### Sorting and Filtering 🔄
 
 Efficiently sort and filter products based on user preferences. Users can easily organize products, making it convenient to find the perfect mobile phone.
 
-![Sorting and Filtering GIF](new/img/showcase/sort-filter.gif)
+![Sorting and Filtering GIF](./public/new/img/showcase/sort-filter.gif)
 
 ### Cart and Favorites ❤️
 
 Seamlessly add products to the cart or mark them as favorites. This feature enhances user interaction, providing a personalized and convenient shopping experience.
 
-![Cart and Favorites GIF](new/img/showcase/cart-favorites.gif)
+![Cart and Favorites GIF](./public/new/img/showcase/cart-favorites.gif)
 
 ### Pagination 📖
 
 Pagination is implemented to enhance the user experience by breaking down the display of products into manageable sections. Users can navigate through the catalog with ease.
 
-![Pagination GIF](new/img/showcase/pagination.gif)
+![Pagination GIF](./public/new/img/showcase/pagination.gif)
 
 ## Technologies
 
