@@ -31,7 +31,7 @@ The application comes with both Dark and Light themes to accommodate diverse use
 
 Users have the flexibility to customize the number of products displayed on the page, tailoring the viewing experience to their preferences.
 
-![Customizable Display GIF](./public/new/img//showcase/product.gif)
+![Customizable Display GIF](./public/new/img/showcase/product.gif)
 
 ### Sorting and Filtering 🔄
 
