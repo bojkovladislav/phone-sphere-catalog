@@ -19,7 +19,7 @@ Explore the exciting features that make the React Phone Catalog stand out:
 
 The catalog boasts an intuitive and user-friendly design, ensuring a smooth and enjoyable experience for users navigating through the phone models.
 
-![User-Friendly Interface GIF](new/img/showcase/overview.gif)
+![User-Friendly Interface GIF](./public/new/img/showcase/overview.gif)
 
 ### Dark and Light Themes 🌗
 
