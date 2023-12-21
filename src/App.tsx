@@ -1,65 +1,70 @@
-import { Route, Routes } from 'react-router-dom';
-import './base/App.scss';
-import { Suspense, useState } from 'react';
-import { HomePage } from './pages/HomePage';
-import { Layout } from './components/Layout';
-import { Loader } from './components/Loader/Loader';
-import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
-import { useAppSelector } from './app/hooks';
-import { ShoppingCartPage } from './pages/ShoppingCartPage';
-import { FavoritesPage } from './pages/FavoritesPage';
-import { ProductDetailsPage } from './pages/ProductDetailsPage';
-import { ProductsPage } from './pages/ProductsPage';
-import { BurgerMenu } from './components/BurgerMenu';
-import { Notification } from './components/Notification';
+import { Route, Routes, useLocation } from "react-router-dom";
+import "./base/App.scss";
+import { Suspense, useEffect, useState } from "react";
+import { HomePage } from "./pages/HomePage";
+import { Layout } from "./components/Layout";
+import { Loader } from "./components/Loader/Loader";
+import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
+import { useAppSelector } from "./app/hooks";
+import { ShoppingCartPage } from "./pages/ShoppingCartPage";
+import { FavoritesPage } from "./pages/FavoritesPage";
+import { ProductDetailsPage } from "./pages/ProductDetailsPage";
+import { ProductsPage } from "./pages/ProductsPage";
+import { BurgerMenu } from "./components/BurgerMenu";
+import { Notification } from "./components/Notification";
 
 const App = () => {
-  const theme = useAppSelector(state => state.theme.value);
+  const theme = useAppSelector((state) => state.theme.value);
   const [isMenuClicked, setIsMenuClicked] = useState(false);
 
+  const ScrollToTop = () => {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+
+    return null;
+  };
+
   return (
-    <div
-      className={`App ${theme}`}
-    >
-      <Layout
-        setIsMenuClicked={setIsMenuClicked}
-      >
+    <div className={`App ${theme}`}>
+      <ScrollToTop />
+      <Layout setIsMenuClicked={setIsMenuClicked}>
         <Routes>
           <Route
             path="/"
-            element={(
+            element={
               <Suspense fallback={<Loader />}>
                 <HomePage />
               </Suspense>
-            )}
+            }
           />
           <Route path="/phones">
             <Route
               path=""
-              element={(
+              element={
                 <Suspense fallback={<Loader />}>
                   <ProductsPage category="Phones" />
                 </Suspense>
-              )}
+              }
             />
             <Route
               path=":phone"
-              element={(
+              element={
                 <Suspense fallback={<Loader />}>
                   <ProductDetailsPage />
                 </Suspense>
-              )}
+              }
             />
           </Route>
           <Route
-            path="/tablets" 
-            element={
-              <Notification message="Tablets will be added soon"/>
-            }
+            path="/tablets"
+            element={<Notification message="Tablets will be added soon" />}
           />
-          <Route path="/accessories" element={
-              <Notification message="Accessories will be added soon"/>
-            }
+          <Route
+            path="/accessories"
+            element={<Notification message="Accessories will be added soon" />}
           />
           <Route path="/favorites" element={<FavoritesPage />} />
           <Route path="/shopping-cart" element={<ShoppingCartPage />} />

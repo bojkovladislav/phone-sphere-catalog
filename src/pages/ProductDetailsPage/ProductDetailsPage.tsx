@@ -68,10 +68,6 @@ export const ProductDetailsPage: FC = () => {
   };
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  useEffect(() => {
     setGeneratedProducts(generateRandomProducts(products));
   }, [products]);
 

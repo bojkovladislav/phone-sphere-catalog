@@ -1,32 +1,32 @@
-import { FC, useEffect, useState } from 'react';
-import useSwr from 'swr';
-import { BASE_URL, fetcher } from '../../api/productsApi';
-import { useAppSelector } from '../../app/hooks';
-import { Notification } from '../../components/Notification';
-import { Pagination } from '../../components/Pagination';
-import { PathContainer } from '../../components/PathContainer';
-import { Products } from '../../components/Products';
-import { SelectButton } from '../../components/SelectButton';
+import { FC, useEffect, useState } from "react";
+import useSwr from "swr";
+import { BASE_URL, fetcher } from "../../api/productsApi";
+import { useAppSelector } from "../../app/hooks";
+import { Notification } from "../../components/Notification";
+import { Pagination } from "../../components/Pagination";
+import { PathContainer } from "../../components/PathContainer";
+import { Products } from "../../components/Products";
+import { SelectButton } from "../../components/SelectButton";
 // eslint-disable-next-line max-len
-import { makeAnArrayByGivenLength } from '../../helpers/makeAnArrayByGivenLength';
-import { Product } from '../../types/product';
-import './productsPage.scss';
+import { makeAnArrayByGivenLength } from "../../helpers/makeAnArrayByGivenLength";
+import { Product } from "../../types/product";
+import "./productsPage.scss";
 
 interface Props {
-  category: string
+  category: string;
 }
 
 export const ProductsPage: FC<Props> = ({ category }) => {
-  const theme = useAppSelector(state => state.theme.value);
-  const [totalItemsOnPage, setTotalItemsOnPage] = useState('16');
-  const [sortBy, setSortBy] = useState('Newest');
+  const theme = useAppSelector((state) => state.theme.value);
+  const [totalItemsOnPage, setTotalItemsOnPage] = useState("16");
+  const [sortBy, setSortBy] = useState("Newest");
   const [visibleItems, setVisibleItems] = useState<Product[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const searchBar = useAppSelector(state => state.searchBar.value);
+  const searchBar = useAppSelector((state) => state.searchBar.value);
   const { data: products }: { data: Product[] } = useSwr(
     `${BASE_URL}.json`,
     fetcher,
-    { suspense: true },
+    { suspense: true }
   );
 
   const handleSetCurrentPage = (page: number) => {
@@ -34,45 +34,48 @@ export const ProductsPage: FC<Props> = ({ category }) => {
   };
 
   const handleArrowClick = (direction: string) => {
-    if (direction === 'left') {
-      setCurrentPage(page => page - 1);
+    if (direction === "left") {
+      setCurrentPage((page) => page - 1);
     } else {
-      setCurrentPage(page => page + 1);
+      setCurrentPage((page) => page + 1);
     }
   };
 
   useEffect(() => {
-    let correctedItems = [...products].sort((productA, productB) => {
-      switch (sortBy) {
-        case 'Newest':
-          return productB.year - productA.year;
+    let correctedItems = [...products]
+      .sort((productA, productB) => {
+        switch (sortBy) {
+          case "Newest":
+            return productB.year - productA.year;
 
-        case 'Cheapest':
-          return productA.price - productB.price;
+          case "Cheapest":
+            return productA.price - productB.price;
 
-        case 'Name':
-          return productB.name.localeCompare(productA.name);
+          case "Name":
+            return productB.name.localeCompare(productA.name);
 
-        default:
-          return 0;
-      }
-    }).filter(product => {
-      const preparedProdName = product.name.toLowerCase().replace(/\s/g, '');
-      const preparedSearchBar = searchBar.toLowerCase().split(' ');
+          default:
+            return 0;
+        }
+      })
+      .filter((product) => {
+        const preparedProdName = product.name.toLowerCase().replace(/\s/g, "");
+        const preparedSearchBar = searchBar.toLowerCase().split(" ");
 
-      return preparedSearchBar
-        .every((keyword) => preparedProdName
-          .includes(keyword));
-    });
+        return preparedSearchBar.every((keyword) =>
+          preparedProdName.includes(keyword)
+        );
+      });
 
-    if (totalItemsOnPage !== 'All') {
-      correctedItems = correctedItems
-        .slice(Number(totalItemsOnPage) * (currentPage - 1),
-          currentPage * Number(totalItemsOnPage));
+    if (totalItemsOnPage !== "All") {
+      correctedItems = correctedItems.slice(
+        Number(totalItemsOnPage) * (currentPage - 1),
+        currentPage * Number(totalItemsOnPage)
+      );
     }
 
     if (searchBar.length) {
-      setTotalItemsOnPage('All');
+      setTotalItemsOnPage("All");
     }
 
     setVisibleItems(correctedItems);
@@ -82,14 +85,10 @@ export const ProductsPage: FC<Props> = ({ category }) => {
     <div className="products-page">
       <PathContainer pathArray={[category]} />
 
-      {category === 'Phones' ? (
-        <h1 className={`title title--${theme}`}>
-          Mobile phones
-        </h1>
+      {category === "Phones" ? (
+        <h1 className={`title title--${theme}`}>Mobile phones</h1>
       ) : (
-        <h1 className={`title title--${theme}`}>
-          {category}
-        </h1>
+        <h1 className={`title title--${theme}`}>{category}</h1>
       )}
 
       <p className="products-page__quantity">
@@ -109,7 +108,7 @@ export const ProductsPage: FC<Props> = ({ category }) => {
               <SelectButton
                 currentOption={sortBy}
                 setCurrentOption={setSortBy}
-                options={['Newest', 'Name', 'Cheapest']}
+                options={["Newest", "Name", "Cheapest"]}
               />
             </div>
             <div className="products-page__filter-button-container">
@@ -120,7 +119,7 @@ export const ProductsPage: FC<Props> = ({ category }) => {
               <SelectButton
                 currentOption={totalItemsOnPage}
                 setCurrentOption={setTotalItemsOnPage}
-                options={['4', '8', '16', 'All']}
+                options={["4", "8", "16", "All"]}
               />
             </div>
           </div>
@@ -130,16 +129,14 @@ export const ProductsPage: FC<Props> = ({ category }) => {
           </ul>
 
           <div className="products-page__pagination">
-            {(totalItemsOnPage !== 'All') && (
+            {totalItemsOnPage !== "All" && (
               <Pagination
                 currentPage={currentPage}
                 handleSetCurrentPage={handleSetCurrentPage}
                 handleArrowClick={handleArrowClick}
-                pages={
-                  makeAnArrayByGivenLength(
-                    Math.ceil(products.length / Number(totalItemsOnPage)),
-                  )
-                }
+                pages={makeAnArrayByGivenLength(
+                  Math.ceil(products.length / Number(totalItemsOnPage))
+                )}
               />
             )}
           </div>
