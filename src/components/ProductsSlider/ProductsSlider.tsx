@@ -1,4 +1,4 @@
-roimport { FC, useMemo, useState, useRef, TouchEvent, useEffect } from "react";
+import { FC, useMemo, useState, useRef, TouchEvent, useEffect } from "react";
 import { useAppSelector } from "../../app/hooks";
 import { renderArrow } from "../../helpers/renderArrow";
 import "./productsSlider.scss";
