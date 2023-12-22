@@ -1,7 +1,7 @@
-import { FC } from 'react';
-import { Footer } from '../Footer';
-import { Header } from '../Header';
-import './layout.scss';
+import { FC } from "react";
+import { Footer } from "../Footer";
+import { Header } from "../Header";
+import "./layout.scss";
 
 interface Props {
   setIsMenuClicked: (isMenuButtonClicked: boolean) => void;
@@ -9,12 +9,10 @@ interface Props {
 
 export const Layout: FC<Props> = ({ setIsMenuClicked, children }) => {
   return (
-    <>
+    <div className="wrapper">
       <Header setIsMenuClicked={setIsMenuClicked} />
-      <main className="main">
-        {children}
-      </main>
+      <main className="main">{children}</main>
       <Footer />
-    </>
+    </div>
   );
 };

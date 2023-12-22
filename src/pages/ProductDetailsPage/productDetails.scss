@@ -70,7 +70,7 @@
   &__image-wrapper {
     padding: 7px;
     transition: all 0.3s;
-    
+
     &--light {
       border: 1px solid $elements-color;
       background-color: $white-color;
@@ -80,7 +80,7 @@
       border: 1px solid $secondary-color;
       background-color: $primary-color;
     }
-    
+
     &--active {
       &__light {
         border: 1px solid $primary-color;
@@ -106,15 +106,15 @@
     @include onTablet {
       @include square(45px);
     }
-  
+
     @include onLaptop {
       @include square(55px);
     }
-  
+
     @include onDesktop {
       @include square(65px);
     }
-    
+
     &--light {
       background-color: $white-color;
     }
@@ -138,7 +138,7 @@
     @include onLaptop {
       @include square(442px);
     }
-    
+
     &--light {
       background-color: $white-color;
     }
@@ -221,7 +221,7 @@
     &--gold {
       background-color: #fcdbc1;
     }
-    
+
     &--spacegray {
       background-color: #4c4c4c;
     }
@@ -272,7 +272,7 @@
     @extend %body-text;
     padding: 7px;
     transition: border 0.3s;
-    
+
     &--light {
       border: 1px solid $icons-color;
       color: $primary-color;
@@ -407,7 +407,7 @@
   &__subtitle {
     @extend %h2;
     margin-bottom: 16px;
-    
+
     &--dark {
       color: $white-color;
     }
@@ -419,13 +419,19 @@
     gap: 32px;
     padding-top: 32px;
     width: max-content;
-    
+
     &--light {
       border-top: 1px solid $elements-color;
     }
 
     &--dark {
       border-top: 1px solid $primary-color;
+    }
+
+    @include onMobile {
+      justify-content: center;
+      width: 100%;
+      align-items: center;
     }
   }
 
@@ -434,10 +440,6 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
-
-    @include onMobile {
-      max-width: 300px;
-    }
   }
 
   &__article-title {
@@ -457,14 +459,10 @@
     padding-top: 32px;
     margin: 0;
 
-    @include onMobile {
-      max-width: 300px;
-    }
-
     @include onTablet {
       min-width: 500px;
     }
-    
+
     &--light {
       border-top: 1px solid $elements-color;
     }

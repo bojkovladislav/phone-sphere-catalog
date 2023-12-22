@@ -312,10 +312,8 @@ export const ProductDetailsPage: FC = () => {
       {!!generatedProducts.length && (
         <ProductsSlider
           title="You may also like"
-          itemsLength={generatedProducts.length}
-        >
-          <Products products={generatedProducts} />
-        </ProductsSlider>
+          products={generatedProducts}
+        />
       )}
     </div>
   );
