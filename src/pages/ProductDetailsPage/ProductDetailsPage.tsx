@@ -16,7 +16,6 @@ import { capitalizeLetter } from "../../helpers/capitalizeLetter";
 import { ProductsSlider } from "../../components/ProductsSlider";
 // eslint-disable-next-line max-len
 import { generateRandomProducts } from "../../helpers/generateRandomProducts";
-import { Products } from "../../components/Products";
 
 export const ProductDetailsPage: FC = () => {
   const { pathname } = useLocation();

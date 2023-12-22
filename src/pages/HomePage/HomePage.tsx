@@ -4,11 +4,9 @@ import { Banner } from "../../components/Banner";
 import { ProductsSlider } from "../../components/ProductsSlider";
 import { ShopByCategory } from "../../components/ShopByCategory/ShopByCategory";
 import "./homepage.scss";
-import { Products } from "../../components/Products";
 import { Product } from "../../types/product";
 import { BASE_URL, fetcher } from "../../api/productsApi";
 import { imagesForBanner } from "../../utils/imagesForBanner";
-import { ProductItem } from "@/components/ProductItem/ProductItem";
 
 export const HomePage = () => {
   const { data: phones }: { data: Product[] } = useSwr(
