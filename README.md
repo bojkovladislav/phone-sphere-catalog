@@ -1,10 +1,10 @@
-# React Phone Catalog
+# Phone Sphere Catalog
 
 ## Introduction
 
-The React Phone Catalog is a visually appealing and fully responsive project tailored to showcase a diverse range of mobile phones. It provides users with a seamless interface for effortless browsing and efficient search capabilities for different phone models. The catalog delivers comprehensive information, including specifications and images, empowering users to make informed choices.
+This visually appealing and fully responsive project is tailored to showcase a diverse range of mobile phones. It provides users with a seamless interface for effortless browsing and efficient search capabilities for different phone models. The catalog delivers comprehensive information, including specifications and images, empowering users to make informed choices.
 
-### [🚀 DEMO](https://bojkovladislav.github.io/react-phone-catalog)
+### [🚀 DEMO](https://bojkovladislav.github.io/phone-sphere-catalog)
 
 **Sections:**
 
@@ -13,7 +13,7 @@ The React Phone Catalog is a visually appealing and fully responsive project tai
 
 ## Features
 
-Explore the exciting features that make the React Phone Catalog stand out:
+Explore the exciting features that make the Phone Sphere Catalog stand out:
 
 ### User-Friendly Interface
 
@@ -59,7 +59,7 @@ Pagination is implemented to enhance the user experience by breaking down the di
 
 ## Technologies
 
-The React Phone Catalog leverages a powerful stack of technologies:
+The Phone Sphere Catalog leverages a powerful stack of technologies:
 
 ### React.js
 
@@ -87,7 +87,7 @@ The Classnames library is employed to conditionally apply CSS class names based 
 
 ### Bulma 📐
 
-Bulma is utilized as the CSS framework to provide a responsive and consistent grid system, as well as a set of modern UI components. This choice enhances the overall aesthetic appeal and responsiveness of the React Phone Catalog, contributing to a polished and professional user interface.
+Bulma is utilized as the CSS framework to provide a responsive and consistent grid system, as well as a set of modern UI components. This choice enhances the overall aesthetic appeal and responsiveness of the Phone Sphere Catalog, contributing to a polished and professional user interface.
 
 ### Axios 🌐
 
