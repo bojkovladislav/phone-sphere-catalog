@@ -97,4 +97,4 @@ Incorporates Axios for efficient HTTP requests, enabling seamless communication 
 
 Utilizes local storage to persistently store and retrieve user preferences, such as the selected theme.
 
-## [🔝 Back to Top](#React-Phone-Catalog)
+## [🔝 Back to Top](#phone-sphere-catalog)
